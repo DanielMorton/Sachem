@@ -6,7 +6,7 @@ use clap::Parser;
 #[command(version = "1.0")]
 pub(crate) struct Args {
     /// Minimum sighting ID to scrape
-    #[arg(short, long)]
+    #[arg(short, long, default_value = "0")]
     pub min: u64,
 
     /// Maximum sighting ID to scrape
