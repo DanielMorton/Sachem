@@ -183,15 +183,17 @@ RUST_LOG=debug ./butterfly-scraper --min 1000 --max 2000
 
 ## Dependencies
 
-- **tokio**: Async runtime for concurrent operations
-- **reqwest**: HTTP client with timeout and retry capabilities
-- **scraper**: HTML parsing and CSS selector support
-- **csv**: Efficient CSV writing
-- **serde**: Serialization/deserialization
-- **clap**: Command-line argument parsing
-- **indicatif**: Progress bars and status indicators
-- **log**: Structured logging
-- **rand**: Random number generation for jitter
+- **clap 4.5.41**: Command-line argument parsing with derive macros
+- **csv 1.3.1**: Efficient CSV reading and writing
+- **env_logger 0.10.2**: Environment-based logging configuration
+- **futures 0.3.31**: Async utilities and combinators
+- **indicatif 0.18.0**: Progress bars and status indicators
+- **log 0.4.27**: Logging facade for structured output
+- **rand 0.9.2**: Random number generation for jitter and delays
+- **reqwest 0.12.22**: HTTP client with JSON support and async capabilities
+- **scraper 0.23.1**: HTML parsing and CSS selector support
+- **serde 1.0.219**: Serialization/deserialization with derive macros
+- **tokio 1.46.1**: Full-featured async runtime for concurrent operations
 
 ## Testing
 
