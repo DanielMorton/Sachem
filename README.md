@@ -83,11 +83,9 @@ sighting_id,url,common_name,scientific_name,species_link,observation_date,submit
 - **observation_date**: Date when the sighting was observed
 - **submitted_by**: Username of the person who submitted the sighting
 - **specimen_type**: Type of specimen (e.g., "Live adult", "Photograph")
-- **observation_notes**: Notes from the observer
 - **status**: Verification status (e.g., "Verified", "Pending")
 - **verified_by**: Username of the verifier (if verified)
 - **verified_date**: Date of verification
-- **coordinator_notes**: Notes from regional coordinators
 - **checklist_regions**: Geographic regions associated with the sighting
 
 ## Performance & Best Practices
