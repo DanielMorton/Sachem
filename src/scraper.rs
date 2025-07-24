@@ -198,18 +198,12 @@ impl ButterflyMothScraper {
         record.submitted_by = get_field("views-field-name", ".username").unwrap_or_default();
         record.specimen_type =
             get_field("views-field-field-specimen-type", ".field-content").unwrap_or_default();
-        record.observation_notes =
-            get_field("views-field-field-observation-notes", ".field-content").unwrap_or_default();
         record.status =
             get_field("views-field-field-sighting-status", ".field-content").unwrap_or_default();
         record.verified_by = get_field("views-field-name-1", ".username").unwrap_or_default();
         record.verified_date =
             get_field("views-field-field-recorddate", ".field-content").unwrap_or_default();
-        record.coordinator_notes = get_field(
-            "views-field-field-sighting-coordinator-notes",
-            ".field-content",
-        )
-            .unwrap_or_default();
+        
 
         // Extract regions (join multiple links)
         if let Ok(region_selector) = Selector::parse("div.views-field-field-region") {
@@ -293,7 +287,7 @@ impl ButterflyMothScraper {
                                 return None;
                             }
                         },
-                        Err(e) => {
+                        Err(_) => {
                             self.add_missing_sighting(sighting_id);
                             return None;
                         }

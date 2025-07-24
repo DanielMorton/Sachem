@@ -10,11 +10,9 @@ pub struct SightingRecord {
     pub observation_date: String,
     pub submitted_by: String,
     pub specimen_type: String,
-    pub observation_notes: String,
     pub status: String,
     pub verified_by: String,
     pub verified_date: String,
-    pub coordinator_notes: String,
     pub checklist_regions: String,
 }
 
@@ -29,11 +27,9 @@ impl Default for SightingRecord {
             observation_date: String::new(),
             submitted_by: String::new(),
             specimen_type: String::new(),
-            observation_notes: String::new(),
             status: String::new(),
             verified_by: String::new(),
             verified_date: String::new(),
-            coordinator_notes: String::new(),
             checklist_regions: String::new(),
         }
     }
