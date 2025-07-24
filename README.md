@@ -136,7 +136,7 @@ cat missing.txt
 Scraping multiple sightings...
 [00:02:34] ████████████████████████████████████████ 1000/1000 100% ETA: 00:00:00 Scraping sightings
 Elapsed time: 00:02:34.567
-Successfully scraped 987 out of 1000 sightings (13 unfound)
+Successfully scraped 987 out of 1000 sightings (13 missing)
 Data saved to sightings.csv
 
 Summary:
