@@ -71,7 +71,11 @@ impl ButterflyMothScraper {
                     }
                 }
 
-                info!("Loaded {} missing sightings from {}", missing_list.len(), filename);
+                info!(
+                    "Loaded {} missing sightings from {}",
+                    missing_list.len(),
+                    filename
+                );
             }
         }
         Ok(())
@@ -96,14 +100,21 @@ impl ButterflyMothScraper {
             // Immediately append to file if configured
             if let Some(filename) = &self.missing_sightings_file {
                 if let Err(e) = self.append_missing_sighting_to_file(sighting_id, filename) {
-                    error!("Failed to append missing sighting {} to file: {}", sighting_id, e);
+                    error!(
+                        "Failed to append missing sighting {} to file: {}",
+                        sighting_id, e
+                    );
                 }
             }
         }
     }
 
     /// Append a single missing sighting ID to the file
-    fn append_missing_sighting_to_file(&self, sighting_id: u64, filename: &str) -> Result<(), Box<dyn std::error::Error>> {
+    fn append_missing_sighting_to_file(
+        &self,
+        sighting_id: u64,
+        filename: &str,
+    ) -> Result<(), Box<dyn std::error::Error>> {
         use std::io::Write;
 
         let mut file = OpenOptions::new()
@@ -119,8 +130,15 @@ impl ButterflyMothScraper {
 
     /// Filter out missing sightings from a list of sighting IDs
     fn filter_missing_sightings(&self, sighting_ids: &[u64]) -> Vec<u64> {
-        let missing_set: HashSet<u64> = self.missing_sightings.lock().unwrap().iter().cloned().collect();
-        let filtered: Vec<u64> = sighting_ids.iter()
+        let missing_set: HashSet<u64> = self
+            .missing_sightings
+            .lock()
+            .unwrap()
+            .iter()
+            .cloned()
+            .collect();
+        let filtered: Vec<u64> = sighting_ids
+            .iter()
             .filter(|&id| !missing_set.contains(id))
             .cloned()
             .collect();
@@ -203,7 +221,6 @@ impl ButterflyMothScraper {
         record.verified_by = get_field("views-field-name-1", ".username").unwrap_or_default();
         record.verified_date =
             get_field("views-field-field-recorddate", ".field-content").unwrap_or_default();
-        
 
         // Extract regions (join multiple links)
         if let Ok(region_selector) = Selector::parse("div.views-field-field-region") {

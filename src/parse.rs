@@ -20,7 +20,7 @@ pub(crate) struct Args {
     /// Maximum number of concurrent requests
     #[arg(short, long, default_value = "5")]
     pub concurrent: usize,
-    
+
     #[arg(short, long, default_value = "missing.txt")]
     pub missing: String,
 
